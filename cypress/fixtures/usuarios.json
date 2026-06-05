@@ -1,0 +1,64 @@
+{
+  "usuarios": [
+    {
+      "name": "Pikachu",
+      "lastName": "Eletrico",
+      "email": "pikachu@teste.com",
+      "password": "Senha123"
+    },
+    {
+      "name": "Charmander",
+      "lastName": "Fogo",
+      "email": "charmander@teste.com.br",
+      "password": "Senha123"
+    },
+    {
+      "name": "Bulbasaur",
+      "lastName": "Planta",
+      "email": "bulbasaur@email.com",
+      "password": "Senha123"
+    },
+    {
+      "name": "Squirtle",
+      "lastName": "Agua",
+      "email": "squirtle@qa.com.br",
+      "password": "Senha123"
+    },
+    {
+      "name": "Jigglypuff",
+      "lastName": "Cantora",
+      "email": "jigglypuff@pokemon.com",
+      "password": "Senha123"
+    },
+    {
+      "name": "Meowth",
+      "lastName": "Persa",
+      "email": "meowth@rocket.com.br",
+      "password": "Senha123"
+    },
+    {
+      "name": "Eevee",
+      "lastName": "Evolucao",
+      "email": "eevee@dev.com",
+      "password": "Senha123"
+    },
+    {
+      "name": "Snorlax",
+      "lastName": "Dorminhoco",
+      "email": "snorlax@teste.com.br",
+      "password": "Senha123"
+    },
+    {
+      "name": "Gengar",
+      "lastName": "Sombrio",
+      "email": "gengar@mail.com",
+      "password": "Senha123"
+    },
+    {
+      "name": "Lucario",
+      "lastName": "Aura",
+      "email": "lucario@empresa.com.br",
+      "password": "Senha123"
+    }
+  ]
+}
