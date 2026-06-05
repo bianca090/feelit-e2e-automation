@@ -7,44 +7,31 @@ describe ('funcionalidade curtir e descurtir postagem', () => {
         cy.get('input[type="password"]').type('Senha123');
         cy.contains('button', 'Entrar no Fluxo').click();
     });
-       
-    it('curtir e descurtir uma postagem', () => {
-       
-        cy.contains('.feed-container .feeling-card', 'Teste automação de curtidas').as('postagem');
-            cy.get('@postagem').find('button.interaction-btn').eq(0).click();
-            cy.get('@postagem').find('button.interaction-btn').eq(0).should('have.class', 'active-like');
-            cy.get('@postagem').find('button.interaction-btn').eq(0).click();
-            cy.get('@postagem').find('button.interaction-btn').eq(0).should('not.have.class', 'active-like');
-      
-});
 
    it('curtir e descurtir validando o contador em tempo real', () => {
-  cy.contains('.feed-container .feeling-card', 'Teste automação de curtidas')
-    .as('postagem');
 
-  cy.get('@postagem').find('button.interaction-btn').eq(0).as('btnCurtir');
-  cy.get('@postagem').find('span').eq(0).as('contador');
+      cy.contains('.feed-container .feeling-card', 'Teste automação de curtidas').as('postagem');
+      cy.get('@postagem').find('button.interaction-btn').first().as('btnCurtir');
+      cy.get('@btnCurtir').find('span').as('contador');
+      cy.get('@contador').invoke('text').then((textoInicial) => {
 
-  cy.get('@contador').invoke('text').then((textoInicial) => {
-    const inicial = Number(textoInicial.trim());
+      const inicial = parseInt(textoInicial.trim(), 10);
 
-    cy.get('@btnCurtir')
-      .click()
-      .should('have.class', 'active-like');
-
-    cy.get('@contador')
-      .should(($span) => {
-        expect(Number($span.text())).to.equal(inicial + 1);
+      cy.log(`Curtidas iniciais: ${inicial}`);
+      cy.get('@btnCurtir').click().should('have.class', 'active-like');
+      cy.get('@contador').should(($span) => {
+          const atual = parseInt($span.text().trim(), 10);
+          expect(atual).to.equal(inicial + 1);
       });
 
-    cy.get('@btnCurtir')
-      .click()
-      .should('not.have.class', 'active-like');
+      cy.get('@btnCurtir').click().should('not.have.class', 'active-like');
 
-    cy.get('@contador')
-      .should(($span) => {
-        expect(Number($span.text())).to.equal(inicial);
-      });
-  });
+      cy.get('@contador').should(($span) => {
+          const final = parseInt($span.text().trim(), 10);
+          expect(final).to.equal(inicial);
+        });
+
+    });
+
 });
 });
