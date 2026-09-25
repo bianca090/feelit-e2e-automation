@@ -4,6 +4,7 @@ module.exports = defineConfig({
   allowCypressEnv: false,
 
   e2e: {
+     baseUrl: "https://fell-it-app.onrender.com",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

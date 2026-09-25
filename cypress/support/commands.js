@@ -7,10 +7,10 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+// 
 //
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+//-- This is a parent command --
+//Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
 // -- This is a child command --
@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import LoginPage from '../pages/LoginPage';
+
+// Comando customizado para autenticar rapidamente antes dos testes
+// que dependem de um usuário logado (ex: Home, feed).
+Cypress.Commands.add('login', (email, password) => {
+  LoginPage.login(email, password);
+});
