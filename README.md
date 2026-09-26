@@ -4,44 +4,62 @@
   <img src="https://img.shields.io/badge/Status-Em%20Andamento-yellow?style=for-the-badge" alt="Status: Em Andamento">
   <img src="https://img.shields.io/badge/Cypress-170B11?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Claude-AI-CC785C?style=for-the-badge" alt="Claude AI">
 </p>
 
 ## 🎓 Sobre o Projeto
-Este projeto de automação de testes de ponta a ponta (E2E) está sendo desenvolvido para fins acadêmicos como parte dos meus estudos na faculdade. O objetivo principal é validar as principais funcionalidades e fluxos críticos da plataforma **Feel.it**, garantindo a qualidade e a estabilidade da aplicação através de testes automatizados modernos.
+
+Este projeto de automação de testes de ponta a ponta (E2E) está sendo desenvolvido para fins acadêmicos como parte dos meus estudos na faculdade.
+
+O objetivo principal é validar as principais funcionalidades e fluxos críticos da plataforma **Feel.it**, garantindo a qualidade e a estabilidade da aplicação através de testes automatizados.
+
+Durante a evolução do projeto, também passei a aplicar boas práticas de arquitetura e organização de código, utilizando o **Page Object Model (POM)** e ferramentas de **Inteligência Artificial** como apoio no processo de refatoração.
+
+---
 
 ## 🧠 Foco no Aprendizado
-Mais do que um requisito acadêmico, este repositório serve como o meu **laboratório prático de estudos**. Estou utilizando este projeto para me aprofundar no ecossistema de QA, focando em:
-* Dominar a ferramenta **Cypress** e sua arquitetura.
-* Consolidar a lógica de programação utilizando **JavaScript** voltado para testes.
-* Aprender a estruturar uma suíte de testes do zero.
-* Praticar o mapeamento limpo e assertivo de elementos web (seletores).
-* Aplicar boas práticas de automação e escrita de cenários baseados na experiência do usuário.
+
+Mais do que um requisito acadêmico, este repositório serve como meu **laboratório prático de estudos em QA e automação de testes**.
+
+Neste projeto, estou praticando:
+
+* Domínio da ferramenta **Cypress** para automação E2E.
+* JavaScript aplicado à automação de testes.
+* Estruturação de uma suíte de testes do zero.
+* Criação e organização de cenários de testes.
+* Mapeamento de elementos e utilização de seletores.
+* Testes de fluxos críticos da aplicação.
+* Aplicação do padrão **Page Object Model (POM)**.
+* Criação de componentes reutilizáveis.
+* Utilização de **Custom Commands** do Cypress.
+* Refatoração e aplicação de boas práticas de **Clean Code**.
+* Utilização de **IA como apoio ao desenvolvimento e refatoração de testes**.
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas Utilizadas
-* **Linguagem:** JavaScript
-* **Framework de Automação:** Cypress
-* **Ambiente de Desenvolvimento:** Node.js / VS Code
+## 🏗️ Arquitetura do Projeto — Page Object Model (POM)
 
----
+Durante a evolução do projeto, implementei o padrão **Page Object Model (POM)** para melhorar a organização e a manutenção dos testes.
 
-## 📌 Status do Desenvolvimento e Próximos Passos
-O projeto encontra-se em **desenvolvimento ativo**. Abaixo está o cronograma das etapas que estou implementando:
+O POM permite separar a lógica de interação com a aplicação da lógica dos cenários de teste.
 
-- [x] Configuração inicial do ambiente de testes (Node.js e Cypress).
-- [/] Estruturação da arquitetura do projeto (Pastas e Configurações).
-- [/] Mapeamento de elementos e escrita dos primeiros cenários E2E.
-- [ ] Implementação de comandos customizados (*Custom Commands*) para otimização do código.
-- [ ] Configuração de relatórios visuais de testes (Mochawesome).
-- [ ] Refatoração seguindo boas práticas de clean code.
+Dessa forma:
 
----
+```text
+e2e/
+├── login.cy.js
+├── home.cy.js
+├── cadastro-massa.cy.js
+└── interacao-feed.cy.js
 
-## 💻 Como Executar o Projeto Localmente (Em breve)
+pages/
+├── LoginPage.js
+├── HomePage.js
+└── RegisterPage.js
 
-> 💡 *Nota: As instruções abaixo serão refinadas conforme a suíte de testes for consolidada.*
+support/
+├── commands.js
+└── e2e.js
 
-1. **Clonar o repositório:**
-```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
+fixtures/
+└── dados de teste
